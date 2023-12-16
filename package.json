@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bucket:start": "pnpm -F buckets start",
+    "login:start": "pnpm -F logins start",
+    "payment:start": "pnpm -F payments start"
   },
   "keywords": [],
   "author": "",
