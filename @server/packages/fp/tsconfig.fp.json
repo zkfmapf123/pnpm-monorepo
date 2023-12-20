@@ -1,0 +1,7 @@
+{
+  "extends": "@repo/typescript-config/bundle.tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "exclude": ["__test__", "node_modules"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@repo/fp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "private": true,
+  "scripts": {
+    "init": "pnpm install",
+    "hello": "echo hello packeags/fp",
+    "clean": "rm -rf dist",
+    "build": "pnpm run clean && tsc -p tsconfig.fp.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

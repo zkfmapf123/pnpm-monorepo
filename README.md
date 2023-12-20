@@ -50,15 +50,60 @@
 }
 ```
 
+> common-command
+
+```json
+// @server/turbo.json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
+```
+
 ## pnpm + turborepo 구축
 
+![turborepo](./pubilc/turborepo.png)
+
 ```sh
+
+## pnpm 구축
 pnpm dlx create-turbo@latest
 
 > @server
 > pnpm workspace
 ```
 
+## Execute
+
+```
+  cd @server
+
+  turbo build
+  turbo start
+
+  curl -i -X GET localhost:3000
+  curl -i -X GET localhost:3000/add
+  curl -i -X GET localhost:3000/min
+  curl -i -X GET localhost:3000/mul
+  curl -i -X GET localhost:3000/div
+  curl -i -X GET localhost:3001
+```
+
 ## Reference
 
 - <a href="https://turbo.build/repo/docs/core-concepts/monorepos"> turborepo monorepo </a>
+- <a href="https://turbo.build/repo/docs/handbook/publishing-packages"> 내부 모듈관리 </a>
+- <a href="https://stackoverflow.com/questions/43042889/typescript-referenceerror-exports-is-not-defined"> export is not defined error </a>
