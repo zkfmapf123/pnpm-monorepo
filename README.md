@@ -1,4 +1,4 @@
-# pnpm + turberepo
+# pnpm + turborepo
 
 ## Why Turborepo?
 
